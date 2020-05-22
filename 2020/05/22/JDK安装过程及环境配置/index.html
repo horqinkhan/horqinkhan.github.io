@@ -20,19 +20,32 @@
     var CONFIG = {"hostname":"boold.github.io","root":"/horqinkhan.github.io/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="handbook">
+  <meta name="description" content="JDK安装过程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://boold.github.io/horqinkhan.github.io/2020/05/20/hello-world/index.html">
+<meta property="og:title" content="JDK安装过程及环境配置">
+<meta property="og:url" content="http://boold.github.io/horqinkhan.github.io/2020/05/22/JDK%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Horqin">
-<meta property="og:description" content="handbook">
+<meta property="og:description" content="JDK安装过程">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-20T08:18:05.374Z">
-<meta property="article:modified_time" content="2020-05-21T09:12:59.229Z">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk1.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk2.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk3.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk4.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk5.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk6.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk7.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk8.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk9.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk10.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk11.png">
+<meta property="og:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk12.png">
+<meta property="article:published_time" content="2020-05-22T13:04:03.000Z">
+<meta property="article:modified_time" content="2020-05-22T13:51:34.801Z">
 <meta property="article:author" content="Tong">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk1.png">
 
-<link rel="canonical" href="http://boold.github.io/horqinkhan.github.io/2020/05/20/hello-world/">
+<link rel="canonical" href="http://boold.github.io/horqinkhan.github.io/2020/05/22/JDK%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
 
 
 <script id="page-configurations">
@@ -45,7 +58,7 @@
   };
 </script>
 
-  <title>Hello World | Horqin</title>
+  <title>JDK安装过程及环境配置 | Horqin</title>
   
 
 
@@ -150,7 +163,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://boold.github.io/horqinkhan.github.io/2020/05/20/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://boold.github.io/horqinkhan.github.io/2020/05/22/JDK%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/horqinkhan.github.io/images/avatar.gif">
@@ -163,7 +176,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          JDK安装过程及环境配置
         </h1>
 
         <div class="post-meta">
@@ -172,16 +185,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2020-05-20 16:18:05" itemprop="dateCreated datePublished" datetime="2020-05-20T16:18:05+08:00">2020-05-20</time>
+              <time title="创建时间：2020-05-22 21:04:03 / 修改时间：21:51:34" itemprop="dateCreated datePublished" datetime="2020-05-22T21:04:03+08:00">2020-05-22</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-21 17:12:59" itemprop="dateModified" datetime="2020-05-21T17:12:59+08:00">2020-05-21</time>
-              </span>
 
           
 
@@ -194,20 +201,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="handbook"><a href="#handbook" class="headerlink" title="handbook"></a>handbook</h2><a id="more"></a> 
-<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="JDK安装过程"><a href="#JDK安装过程" class="headerlink" title="JDK安装过程"></a>JDK安装过程</h1><a id="more"></a>
+<p>首先进入<a href="https://www.oracle.com/index.html" target="_blank" rel="noopener">甲骨文官网</a> </p>
+<p>接着打开菜单，选择downloads<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk1.png" alt="如图"> </p>
+<p>下滑找到JDK<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk2.png" alt="如图"> </p>
+<p>因为考虑到有些初学者（比如我）会跟着老师选择一些老的版本，所以找到最下方的Java Archive进行历史版本的下载<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk3.png" alt="如图"> </p>
+<p>这里就可以进行对版本的选择了，我选择的是jdk9<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk4.png" alt="如图"><br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk5.png" alt="如图"> </p>
+<p>出现这个弹窗后勾选接受就可以开始下载了<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk6.png" alt="如图"> </p>
+<p>下载结束后开始jdk的安装<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk7.png" alt="如图"> </p>
+<p>选择安装路径，注意不要带有中文以及空格。这里我并没有安装公共jre，因为jdk本身的开发工具里就已经包括了jre了，所以我们没有必要再去安装一个jre<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk8.png" alt="如图"> </p>
+<p>最后就下一步下一步，等待安装完毕后关闭对话框就好了。</p>
+<h1 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h1><p>首先我们右键“此电脑”在下拉列表中选择“属性”</p>
+<p>接着点开左侧的“高级系统设置”，选中“环境变量”<br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk9.png" alt="如图"><br><img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk10.png" alt="如图"></p>
+<p>这里我们做两处改动</p>
+<ul>
+<li><p>首先在下方系统变量的框中新建一个变量</p>
+<blockquote>
+<p>JAVA_HOME </p>
+</blockquote>
+<p>  并在后方给出jdk的安装路径（注意大写）<br>  <img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk11.png" alt="如图"></p>
+</li>
+<li><p>接着我们将“PATH”变量进行更改，在最上方添加字段</p>
+<blockquote>
+<p>%JAVA_HOME%\bin</p>
+</blockquote>
+<p>  <img src="https://github.com/horqinkhan/horqinkhan.github.io/blob/master/%E5%9B%BE%E7%89%87/jdk12.png" alt="如图"><br>  然后点确定退出，完成环境的配置。</p>
+</li>
+</ul>
 
     </div>
 
@@ -222,11 +242,11 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/horqinkhan.github.io/2020/05/21/TEST/" rel="next" title="TEST">
-      TEST <i class="fa fa-chevron-right"></i>
+    <a href="/horqinkhan.github.io/2020/05/22/%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81%E6%A0%87%E8%AF%86%E7%AC%A6%E5%8F%8A%E5%B8%B8%E9%87%8F/" rel="prev" title="关键字、标识符及常量">
+      <i class="fa fa-chevron-left"></i> 关键字、标识符及常量
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -285,7 +305,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#handbook"><span class="nav-number">1.</span> <span class="nav-text">handbook</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">2.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">2.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">2.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">2.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">2.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JDK安装过程"><span class="nav-number">1.</span> <span class="nav-text">JDK安装过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#环境配置"><span class="nav-number">2.</span> <span class="nav-text">环境配置</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
