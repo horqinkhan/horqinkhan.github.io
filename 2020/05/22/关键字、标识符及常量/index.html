@@ -22,13 +22,13 @@
 
   <meta name="description" content="关键字：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关键字、标识符及常量">
+<meta property="og:title" content="关键字、标识符、常量、数据类型和变量">
 <meta property="og:url" content="http://boold.github.io/horqinkhan.github.io/2020/05/22/%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81%E6%A0%87%E8%AF%86%E7%AC%A6%E5%8F%8A%E5%B8%B8%E9%87%8F/index.html">
 <meta property="og:site_name" content="Horqin">
 <meta property="og:description" content="关键字：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-22T12:42:10.000Z">
-<meta property="article:modified_time" content="2020-05-22T13:51:28.328Z">
+<meta property="article:modified_time" content="2020-05-22T16:01:43.109Z">
 <meta property="article:author" content="Tong">
 <meta name="twitter:card" content="summary">
 
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>关键字、标识符及常量 | Horqin</title>
+  <title>关键字、标识符、常量、数据类型和变量 | Horqin</title>
   
 
 
@@ -163,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          关键字、标识符及常量
+          关键字、标识符、常量、数据类型和变量
         </h1>
 
         <div class="post-meta">
@@ -172,10 +172,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-05-22 20:42:10 / 修改时间：21:51:28" itemprop="dateCreated datePublished" datetime="2020-05-22T20:42:10+08:00">2020-05-22</time>
+              <time title="创建时间：2020-05-22 20:42:10" itemprop="dateCreated datePublished" datetime="2020-05-22T20:42:10+08:00">2020-05-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-05-23 00:01:43" itemprop="dateModified" datetime="2020-05-23T00:01:43+08:00">2020-05-23</time>
+              </span>
 
           
 
@@ -220,7 +226,37 @@
 <li>浮点数常量：直接写上的数字，有小数点，例：2.2</li>
 <li>字符常量：凡是用单引号引起来的单个字符，只能是单个字符，例：’A’</li>
 <li>布尔常量：ture、false</li>
-<li>空常量：null 代表没有任何数据</li>
+<li>空常量：null 代表没有任何数据 </li>
+</ol>
+<hr>
+<h1 id="基本数据类型："><a href="#基本数据类型：" class="headerlink" title="基本数据类型："></a>基本数据类型：</h1><ul>
+<li>整数型 byte short int long</li>
+<li>浮点型 float double</li>
+<li>字符型 char</li>
+<li>布尔型 boolean</li>
+</ul>
+<hr>
+<h1 id="变量："><a href="#变量：" class="headerlink" title="变量："></a>变量：</h1><blockquote>
+<p>程序运行期间，内容可以发生改变的量</p>
+</blockquote>
+<h2 id="创建一个变量并使用的格式："><a href="#创建一个变量并使用的格式：" class="headerlink" title="创建一个变量并使用的格式："></a>创建一个变量并使用的格式：</h2><blockquote>
+<p>数据类型 变量名称；//创建了一个变量</p>
+</blockquote>
+<blockquote>
+<p>变量名称 = 数据值；//赋值，将右边的数据值交给左边的变量<br>例：</p>
+</blockquote>
+<pre><code>int num1;
+
+num1 = 100;</code></pre><h2 id="一步到位的格式："><a href="#一步到位的格式：" class="headerlink" title="一步到位的格式："></a>一步到位的格式：</h2><blockquote>
+<p>数据类型 变量名称 = 数据值；//创建一个变量的同时赋值<br>例：    </p>
+</blockquote>
+<pre><code>int num1 = 100;</code></pre><h2 id="变量的注意事项："><a href="#变量的注意事项：" class="headerlink" title="变量的注意事项："></a>变量的注意事项：</h2><ol>
+<li>如果创建多个变量，变量之间名称不能重复</li>
+<li>对于float和long来说，不能省略F和L字母后缀</li>
+<li>如果使用byte或者short，那要注意右侧数据的赋值范围</li>
+<li>没有赋值的变量不能直接使用</li>
+<li>变量使用不能超过作用域范围。【作用域】：从定义变量的一行直至所属大括号结束的范围</li>
+<li>可以通过一个语句创建多个变量，但建议不要这么写</li>
 </ol>
 
     </div>
@@ -241,8 +277,8 @@
       <i class="fa fa-chevron-left"></i> 常用的命令提示符
     </a></div>
       <div class="post-nav-item">
-    <a href="/horqinkhan.github.io/2020/05/22/JDK%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="next" title="JDK安装过程及环境配置">
-      JDK安装过程及环境配置 <i class="fa fa-chevron-right"></i>
+    <a href="/horqinkhan.github.io/2020/05/22/%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81%E6%A0%87%E8%AF%86%E7%AC%A6%E3%80%81%E5%B8%B8%E9%87%8F%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F/" rel="next" title="关键字、标识符、常量、数据类型和变量">
+      关键字、标识符、常量、数据类型和变量 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -302,7 +338,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关键字："><span class="nav-number">1.</span> <span class="nav-text">关键字：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特征："><span class="nav-number">1.1.</span> <span class="nav-text">特征：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标识符："><span class="nav-number">2.</span> <span class="nav-text">标识符：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规则："><span class="nav-number">2.1.</span> <span class="nav-text">命名规则：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规范："><span class="nav-number">2.2.</span> <span class="nav-text">命名规范：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常量："><span class="nav-number">3.</span> <span class="nav-text">常量：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常量分类："><span class="nav-number">3.1.</span> <span class="nav-text">常量分类：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关键字："><span class="nav-number">1.</span> <span class="nav-text">关键字：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特征："><span class="nav-number">1.1.</span> <span class="nav-text">特征：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标识符："><span class="nav-number">2.</span> <span class="nav-text">标识符：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规则："><span class="nav-number">2.1.</span> <span class="nav-text">命名规则：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规范："><span class="nav-number">2.2.</span> <span class="nav-text">命名规范：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常量："><span class="nav-number">3.</span> <span class="nav-text">常量：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常量分类："><span class="nav-number">3.1.</span> <span class="nav-text">常量分类：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本数据类型："><span class="nav-number">4.</span> <span class="nav-text">基本数据类型：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量："><span class="nav-number">5.</span> <span class="nav-text">变量：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个变量并使用的格式："><span class="nav-number">5.1.</span> <span class="nav-text">创建一个变量并使用的格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一步到位的格式："><span class="nav-number">5.2.</span> <span class="nav-text">一步到位的格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的注意事项："><span class="nav-number">5.3.</span> <span class="nav-text">变量的注意事项：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -316,7 +352,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/horqinkhan.github.io/archives/">
         
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
