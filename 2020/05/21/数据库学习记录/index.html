@@ -20,19 +20,19 @@
     var CONFIG = {"hostname":"boold.github.io","root":"/horqinkhan.github.io/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="关键字：">
+  <meta name="description" content="lesson1 ER模型">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关键字、标识符、常量、数据类型和变量">
-<meta property="og:url" content="http://boold.github.io/horqinkhan.github.io/2020/05/22/%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81%E6%A0%87%E8%AF%86%E7%AC%A6%E3%80%81%E5%B8%B8%E9%87%8F%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F/index.html">
+<meta property="og:title" content="数据库原理学习记录">
+<meta property="og:url" content="http://boold.github.io/horqinkhan.github.io/2020/05/21/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="Horqin">
-<meta property="og:description" content="关键字：">
+<meta property="og:description" content="lesson1 ER模型">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-05-22T12:42:10.000Z">
-<meta property="article:modified_time" content="2020-05-22T16:00:45.388Z">
+<meta property="article:published_time" content="2020-05-21T08:49:49.000Z">
+<meta property="article:modified_time" content="2021-02-16T18:02:27.900Z">
 <meta property="article:author" content="Tong">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://boold.github.io/horqinkhan.github.io/2020/05/22/%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81%E6%A0%87%E8%AF%86%E7%AC%A6%E3%80%81%E5%B8%B8%E9%87%8F%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F/">
+<link rel="canonical" href="http://boold.github.io/horqinkhan.github.io/2020/05/21/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>关键字、标识符、常量、数据类型和变量 | Horqin</title>
+  <title>数据库原理学习记录 | Horqin</title>
   
 
 
@@ -150,7 +150,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://boold.github.io/horqinkhan.github.io/2020/05/22/%E5%85%B3%E9%94%AE%E5%AD%97%E3%80%81%E6%A0%87%E8%AF%86%E7%AC%A6%E3%80%81%E5%B8%B8%E9%87%8F%E3%80%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F/">
+    <link itemprop="mainEntityOfPage" href="http://boold.github.io/horqinkhan.github.io/2020/05/21/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/horqinkhan.github.io/images/avatar.gif">
@@ -163,7 +163,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          关键字、标识符、常量、数据类型和变量
+          数据库原理学习记录
         </h1>
 
         <div class="post-meta">
@@ -173,14 +173,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-05-22 20:42:10" itemprop="dateCreated datePublished" datetime="2020-05-22T20:42:10+08:00">2020-05-22</time>
+              <time title="创建时间：2020-05-21 16:49:49" itemprop="dateCreated datePublished" datetime="2020-05-21T16:49:49+08:00">2020-05-21</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-23 00:00:45" itemprop="dateModified" datetime="2020-05-23T00:00:45+08:00">2020-05-23</time>
+                <time title="修改时间：2021-02-17 02:02:27" itemprop="dateModified" datetime="2021-02-17T02:02:27+08:00">2021-02-17</time>
               </span>
 
           
@@ -194,70 +194,70 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="关键字："><a href="#关键字：" class="headerlink" title="关键字："></a>关键字：</h1><a id="more"></a>
-<blockquote>
-<p>有特殊含义的、被保留的、不能随意使用的字符。</p>
-</blockquote>
-<h2 id="特征："><a href="#特征：" class="headerlink" title="特征："></a>特征：</h2><ol>
-<li>完全小写的字母。</li>
-<li>在增强版记事本中（如notepad++中）有特殊颜色。</li>
-</ol>
-<hr>
-<h1 id="标识符："><a href="#标识符：" class="headerlink" title="标识符："></a>标识符：</h1><blockquote>
-<p>标识符指自己定义的内容，如类名、方法名和变量名</p>
-</blockquote>
-<h2 id="命名规则："><a href="#命名规则：" class="headerlink" title="命名规则："></a>命名规则：</h2><ol>
-<li>只能包含大小写字母、数字、$和下划线</li>
-<li>不能数字开头</li>
-<li>不能是关键字<h2 id="命名规范："><a href="#命名规范：" class="headerlink" title="命名规范："></a>命名规范：</h2></li>
-</ol>
-<ul>
-<li>类名：首字母大写，后面每个单词首字母大写（也称大驼峰式），如HelloWorld</li>
-<li>变量名：首字母小写，后面每个单词首字母大写</li>
-<li>方法名：同变量名</li>
-</ul>
-<hr>
-<h1 id="常量："><a href="#常量：" class="headerlink" title="常量："></a>常量：</h1><blockquote>
-<p>在程序运行期间，固定不变的量。</p>
-</blockquote>
-<h2 id="常量分类："><a href="#常量分类：" class="headerlink" title="常量分类："></a>常量分类：</h2><ol>
-<li>字符串常量：凡是用双引号引起来的部分，叫做字符串常量，例：”abc”</li>
-<li>整数常量：直接写上的数字，没有小数点，例：100</li>
-<li>浮点数常量：直接写上的数字，有小数点，例：2.2</li>
-<li>字符常量：凡是用单引号引起来的单个字符，只能是单个字符，例：’A’</li>
-<li>布尔常量：ture、false</li>
-<li>空常量：null 代表没有任何数据 </li>
-</ol>
-<hr>
-<h1 id="基本数据类型："><a href="#基本数据类型：" class="headerlink" title="基本数据类型："></a>基本数据类型：</h1><ul>
-<li>整数型 byte short int long</li>
-<li>浮点型 float double</li>
-<li>字符型 char</li>
-<li>布尔型 boolean</li>
-</ul>
-<hr>
-<h1 id="变量："><a href="#变量：" class="headerlink" title="变量："></a>变量：</h1><blockquote>
-<p>程序运行期间，内容可以发生改变的量</p>
-</blockquote>
-<h2 id="创建一个变量并使用的格式："><a href="#创建一个变量并使用的格式：" class="headerlink" title="创建一个变量并使用的格式："></a>创建一个变量并使用的格式：</h2><blockquote>
-<p>数据类型 变量名称；//创建了一个变量</p>
-</blockquote>
-<blockquote>
-<p>变量名称 = 数据值；//赋值，将右边的数据值交给左边的变量<br>例：</p>
-</blockquote>
-<pre><code>int num1;
+        <h1 id="lesson1-ER模型"><a href="#lesson1-ER模型" class="headerlink" title="lesson1 ER模型"></a>lesson1 ER模型</h1><a id="more"></a> 
 
-num1 = 100;</code></pre><h2 id="一步到位的格式："><a href="#一步到位的格式：" class="headerlink" title="一步到位的格式："></a>一步到位的格式：</h2><blockquote>
-<p>数据类型 变量名称 = 数据值；//创建一个变量的同时赋值<br>例：    </p>
+<h2 id="数据库设计原则"><a href="#数据库设计原则" class="headerlink" title="数据库设计原则"></a>数据库设计原则</h2><ul>
+<li>真实性：反映现实(Faithfulness: reflect reality)</li>
+<li>避免冗余(Avoid redundancy)</li>
+<li>挑选合适的元素(Picking the right kind of element)</li>
+</ul>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
+<li>实体(entities)，描述真实的事物</li>
+<li>属性(attribute)，描述实体的属性</li>
+<li>键(key)，一个实体类型通常有一个键：即一组能唯一识别一个实体的属性<br>  可能有一个以上的键，且不可能有两个实体的键相同</li>
+<li>recursive relationship(递归关系)：是对自身的引用，在多媒体数据库中表现为记录与记录之间直接或间接的调用</li>
+</ul>
+<h2 id="ER中实体分为复合实体和弱实体"><a href="#ER中实体分为复合实体和弱实体" class="headerlink" title="ER中实体分为复合实体和弱实体"></a>ER中实体分为复合实体和弱实体</h2><ul>
+<li>弱实体(weak entity type)：一个实体必须依赖于另一个实体存在，那么前者为弱实体，后者为强实体。如 学生-拥有-成绩单 这个关系中，成绩单依赖于学生存在，所以学生为强实体，而成绩单为弱实体。<br>弱实体与强实体关系为N:1或1：1。在ER图中，弱实体为双线矩形，而弱实体连接的关系应为双线菱形。</li>
+</ul>
+<h2 id="ER图中关联关系有三种："><a href="#ER图中关联关系有三种：" class="headerlink" title="ER图中关联关系有三种："></a>ER图中关联关系有三种：</h2><ul>
+<li>1对1（1:1） </li>
+<li>1对多（1:N） </li>
+<li>多对多（M:N） </li>
+</ul>
+<h2 id="ER图中，实体在关系中的参与分两种，"><a href="#ER图中，实体在关系中的参与分两种，" class="headerlink" title="ER图中，实体在关系中的参与分两种，"></a>ER图中，实体在关系中的参与分两种，</h2><ul>
+<li>全部参与(total)</li>
+<li>部分参与(partial)<ul>
+<li>当实体在关系中全部参与时要用双线连接实体和关系</li>
+</ul>
+</li>
+</ul>
+<h2 id="属性的分类："><a href="#属性的分类：" class="headerlink" title="属性的分类："></a>属性的分类：</h2><ul>
+<li>复合属性(composite attribute)：指属性下又可分为其他几种属性，如姓名属性下又分为姓与名</li>
+<li>多值属性(multivalued attribute)：指同属性可以有多种取值，如书籍的分类属性可分为历史、文学等，在ER图中用双线椭圆表示<ul>
+<li>在描述模式(schemata)的时候用()来描述复合属性的，用{}来描述来描述多值属性的</li>
+</ul>
+</li>
+<li>派生属性(derived attribute)：非永久保存于数据库的属性，是从其他属性值或数据中派生出来的，如在实例 兴趣 中，小组名字，小组ID为其属性，而小组人数是在数据库中计算得来且会不断变化，即为派生属性。在ER图中派生属性表现为虚线椭圆。</li>
+</ul>
+<h2 id="overlapping与disjoint"><a href="#overlapping与disjoint" class="headerlink" title="overlapping与disjoint"></a>overlapping与disjoint</h2><ul>
+<li>重叠约束(overlapping)，例，子类客户和子类员工，一个人可以既是客户也是员工，故这两个子类重叠</li>
+<li>不相交约束(disjoint)，例，银行的账户下的子类储值账户和信用账户，是不相重叠的，故这两个子类不相交</li>
+</ul>
+<hr>
+<h1 id="lesson2-关系数据模型"><a href="#lesson2-关系数据模型" class="headerlink" title="lesson2 关系数据模型"></a>lesson2 关系数据模型</h1><blockquote>
+<p>Composite and multivalued attributes are disallowed in relation model.</p>
 </blockquote>
-<pre><code>int num1 = 100;</code></pre><h2 id="变量的注意事项："><a href="#变量的注意事项：" class="headerlink" title="变量的注意事项："></a>变量的注意事项：</h2><ol>
-<li>如果创建多个变量，变量之间名称不能重复</li>
-<li>对于float和long来说，不能省略F和L字母后缀</li>
-<li>如果使用byte或者short，那要注意右侧数据的赋值范围</li>
-<li>没有赋值的变量不能直接使用</li>
-<li>变量使用不能超过作用域范围。【作用域】：从定义变量的一行直至所属大括号结束的范围</li>
-<li>可以通过一个语句创建多个变量，但建议不要这么写</li>
+<blockquote>
+<p>在关系模型中不允许复合和多值属性。</p>
+</blockquote>
+<h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><ol>
+<li>关系(Relation)：一个关系对应着一个二维表，二维表就是关系名。</li>
+<li>元组(Tuple)：在二维表中的一行，称为一个元组。</li>
+<li>属性(Attribute)：在二维表中的列，称为属性。属性的个数称为关系的元或度。列的值称为属性值；</li>
+<li>(值)域(Domain)：属性值的取值范围为值域。</li>
+<li>键(key)：如果在一个关系中存在唯一标识一个实体的一个属性或属性集称为实体的键。</li>
+<li>候选键(candidate key)：若关系中的某一属性的值能唯一标识一个元组,则称为该关系的候选键。</li>
+<li>主键(primary key)：当一个关系模式有多个候选键时，通常选择一个单一属性或少量属性的主键比较好。</li>
 </ol>
+<h2 id="关系的完整性约束条件"><a href="#关系的完整性约束条件" class="headerlink" title="关系的完整性约束条件"></a>关系的完整性约束条件</h2><p>完整性约束用于确定关系数据库里数据的准确性和一致性。</p>
+<ul>
+<li>键约束(Key constraint)：每个关系实例的候选键值必须是唯一的。</li>
+<li>实体完整性(Entity integrity)：实体完整性强制表的标识符列或主键的完整性，属于主键的属性不能为NULL。</li>
+<li>引用完整性(Referential integrity)：引用完整性基于外键与主键之间或外键与唯一键之间的关系。</li>
+<li>检查约束(Checking constraints on updates)</li>
+</ul>
+<hr>
 
     </div>
 
@@ -273,12 +273,12 @@ num1 = 100;</code></pre><h2 id="一步到位的格式："><a href="#一步到位
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/horqinkhan.github.io/2020/05/22/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6/" rel="prev" title="常用的命令提示符">
-      <i class="fa fa-chevron-left"></i> 常用的命令提示符
+    <a href="/horqinkhan.github.io/2020/05/20/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
     </a></div>
       <div class="post-nav-item">
-    <a href="/horqinkhan.github.io/2020/05/22/JDK%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B%E5%8F%8A%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" rel="next" title="JDK安装过程及环境配置">
-      JDK安装过程及环境配置 <i class="fa fa-chevron-right"></i>
+    <a href="/horqinkhan.github.io/2020/05/21/TEST/" rel="next" title="TEST">
+      TEST <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -338,7 +338,7 @@ num1 = 100;</code></pre><h2 id="一步到位的格式："><a href="#一步到位
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#关键字："><span class="nav-number">1.</span> <span class="nav-text">关键字：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特征："><span class="nav-number">1.1.</span> <span class="nav-text">特征：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标识符："><span class="nav-number">2.</span> <span class="nav-text">标识符：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规则："><span class="nav-number">2.1.</span> <span class="nav-text">命名规则：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名规范："><span class="nav-number">2.2.</span> <span class="nav-text">命名规范：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#常量："><span class="nav-number">3.</span> <span class="nav-text">常量：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#常量分类："><span class="nav-number">3.1.</span> <span class="nav-text">常量分类：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本数据类型："><span class="nav-number">4.</span> <span class="nav-text">基本数据类型：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#变量："><span class="nav-number">5.</span> <span class="nav-text">变量：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建一个变量并使用的格式："><span class="nav-number">5.1.</span> <span class="nav-text">创建一个变量并使用的格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一步到位的格式："><span class="nav-number">5.2.</span> <span class="nav-text">一步到位的格式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的注意事项："><span class="nav-number">5.3.</span> <span class="nav-text">变量的注意事项：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson1-ER模型"><span class="nav-number">1.</span> <span class="nav-text">lesson1 ER模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库设计原则"><span class="nav-number">1.1.</span> <span class="nav-text">数据库设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ER中实体分为复合实体和弱实体"><span class="nav-number">1.3.</span> <span class="nav-text">ER中实体分为复合实体和弱实体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ER图中关联关系有三种："><span class="nav-number">1.4.</span> <span class="nav-text">ER图中关联关系有三种：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ER图中，实体在关系中的参与分两种，"><span class="nav-number">1.5.</span> <span class="nav-text">ER图中，实体在关系中的参与分两种，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性的分类："><span class="nav-number">1.6.</span> <span class="nav-text">属性的分类：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overlapping与disjoint"><span class="nav-number">1.7.</span> <span class="nav-text">overlapping与disjoint</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson2-关系数据模型"><span class="nav-number">2.</span> <span class="nav-text">lesson2 关系数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系的完整性约束条件"><span class="nav-number">2.2.</span> <span class="nav-text">关系的完整性约束条件</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
