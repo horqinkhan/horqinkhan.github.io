@@ -28,7 +28,7 @@
 <meta property="og:description" content="离散数学lesson1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-02-16T12:20:51.000Z">
-<meta property="article:modified_time" content="2021-02-16T12:33:23.774Z">
+<meta property="article:modified_time" content="2021-02-19T09:03:05.468Z">
 <meta property="article:author" content="Tong">
 <meta name="twitter:card" content="summary">
 
@@ -172,10 +172,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-02-16 20:20:51 / 修改时间：20:33:23" itemprop="dateCreated datePublished" datetime="2021-02-16T20:20:51+08:00">2021-02-16</time>
+              <time title="创建时间：2021-02-16 20:20:51" itemprop="dateCreated datePublished" datetime="2021-02-16T20:20:51+08:00">2021-02-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-02-19 17:03:05" itemprop="dateModified" datetime="2021-02-19T17:03:05+08:00">2021-02-19</time>
+              </span>
 
           
 
@@ -235,6 +241,91 @@ f (m, n) =   f (m − n, n) if m &gt; n
 ∵ 58÷29=2(余0)
 ∴ (58，29)= 29；
 ∴ gmd(319，377)=29。</code></pre><hr>
+<hr>
+<h1 id="离散数学lesson2"><a href="#离散数学lesson2" class="headerlink" title="离散数学lesson2"></a>离散数学lesson2</h1><h2 id="集合内一些元素的定义"><a href="#集合内一些元素的定义" class="headerlink" title="集合内一些元素的定义"></a>集合内一些元素的定义</h2><ul>
+<li><p>幂集(Power Set)：由该集合全部子集为元素构成的集合。<br>  Pow(X) = { A : A ⊆ X }<br>  Always： |Pow(X)| = 2^|X|</p>
+</li>
+<li><p>基数(cardinalities)：一个集合的元素个数</p>
+</li>
+<li><p>区间(Interval)</p>
+</li>
+<li><p>并集(union)：A ∪ B，其元素为 A or B</p>
+</li>
+<li><p>交集(intersection)：A ∩ B, 其元素为 A and B</p>
+<pre><code>如果 A ∩ B=∅ 则AB不相交(disjoint)
+A ∪ B = B ⇔ A ⊆ B
+A ∩ B = B ⇔ A ⊇ B</code></pre></li>
+<li><p>差值(difference)：A \ B， 也就是</p>
+<pre><code>A = {1,2,3}, B = {3,4}, A\B = {1,2} </code></pre></li>
+<li><p>对称差(symmetric difference)：</p>
+<p>  只属于其中一个集合，而不属于另一个集合的元素组成的集合<br>  A ⊕ B = (A \ B) ∪ (B \ A)</p>
+</li>
+<li><p>补集(complement)：给定全集U，则A在U中的相对补集称为A的绝对补集（简称补集），记为A^c</p>
+</li>
+</ul>
+<h2 id="集合运算法则"><a href="#集合运算法则" class="headerlink" title="集合运算法则"></a>集合运算法则</h2><p>虽然有点小儿科还是记下来当玩了：</p>
+<ol>
+<li><p>交换率(Commutativity)</p>
+<pre><code>A ∪ B = B ∪ A
+A ∩ B = B ∩ A</code></pre></li>
+<li><p>结合律(Associativity)</p>
+<pre><code>(A ∪ B) ∪ C = A ∪ (B ∪ C)
+(A ∩ B) ∩ C = A ∩ (B ∩ C)</code></pre></li>
+<li><p>分配律(Distribution)</p>
+<pre><code>A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C)
+A ∩ (B ∪ C) = (A ∩ B) ∪ (A ∩ C)</code></pre></li>
+<li><p>幂等(Idempotence)</p>
+<pre><code>A ∪ A = A
+A ∩ A = A</code></pre></li>
+<li><p>Identity</p>
+<pre><code>A ∪ ∅ = A
+A ∩ ∅ = ∅</code></pre></li>
+<li><p>双重否定率(Double Complementation)</p>
+<pre><code>(A^c)^c = A</code></pre></li>
+<li><p>德摩根定律(De Morgan laws)</p>
+<pre><code>(A ∪ B)^c = A^c ∩ B^c
+(A ∩ B)^c = A^c ∪ B^c</code></pre><h2 id="形式语言内一些元素的定义"><a href="#形式语言内一些元素的定义" class="headerlink" title="形式语言内一些元素的定义"></a>形式语言内一些元素的定义</h2></li>
+</ol>
+<ul>
+<li><p>Σ(Sigma),求和符号</p>
+</li>
+<li><p>笛卡儿积(Cartesian product)：</p>
+<p>  如果集合X是13个元素的点数集合{A,K,Q,J,10,9,8,7,6,5,4,3,2}，而集合Y是4个元素的花色集合{♠, ♥, ♦, ♣}，则这两个集合的笛卡儿积是有52个元素的标准扑克牌的集合{(A,♠),(K,♠),…,(2,♠),…,(A,♣),…,(3,♣),(2,♣)}。</p>
+</li>
+<li><p>笛卡尔积功能：分配元素</p>
+</li>
+<li><p>Σ(Sigma)：字母表(alphabet)</p>
+</li>
+<li><p>w(word)：字符串： any finite string of symbols from Σ<br>  length(ω)：字符串长度</p>
+</li>
+<li><p>λ(lambda)：空字符串(empty word)，空字符串长度为0，即length(λ) = 0</p>
+</li>
+<li><p>Σ^k：所有长度为k的字符串组成的集合</p>
+<pre><code>特例：Σ^0 = {λ}, Σ^1 = Σ
+Σ^∗ ：全集，set of all words (of all lengths)
+Σ^+ ：非空正集，set of all nonempty words (of any positive length)</code></pre></li>
+</ul>
+<h2 id="命题逻辑Propositional-Logic"><a href="#命题逻辑Propositional-Logic" class="headerlink" title="命题逻辑Propositional Logic"></a>命题逻辑Propositional Logic</h2><ul>
+<li><p>symbol and text</p>
+<ul>
+<li><p>∧ means “and”, “but”, “;”, “:”</p>
+</li>
+<li><p>∨ means “or”, “either . . . or . . . ”</p>
+</li>
+<li><p>¬ means “not”, “it is not the case that”</p>
+</li>
+<li><p>⇒ means “must”</p>
+</li>
+<li><p>A unless B 表示为 ¬B ⇒ A</p>
+</li>
+<li><p>A if, and only if, B 表示为 A ⇔ B</p>
+<h2 id="真值表："><a href="#真值表：" class="headerlink" title="真值表："></a>真值表：</h2><p>  A  B  A ∧ B        A  B  A ∨ B    A  ¬ A<br>  F  F    F            F  F    F        F    T<br>  F  T    F            F  T    T        T    F<br>  T  F    F            T  F    T<br>  T  T    T            T  T    T</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<hr>
 
     </div>
 
@@ -315,7 +406,7 @@ f (m, n) =   f (m − n, n) if m &gt; n
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#离散数学lesson1"><span class="nav-number">1.</span> <span class="nav-text">离散数学lesson1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合"><span class="nav-number">2.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取整："><span class="nav-number">3.</span> <span class="nav-text">取整：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#除法："><span class="nav-number">4.</span> <span class="nav-text">除法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">5.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#欧几里得算法（辗转相除法）"><span class="nav-number">6.</span> <span class="nav-text">欧几里得算法（辗转相除法）</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#离散数学lesson1"><span class="nav-number">1.</span> <span class="nav-text">离散数学lesson1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合"><span class="nav-number">2.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取整："><span class="nav-number">3.</span> <span class="nav-text">取整：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#除法："><span class="nav-number">4.</span> <span class="nav-text">除法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">5.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#欧几里得算法（辗转相除法）"><span class="nav-number">6.</span> <span class="nav-text">欧几里得算法（辗转相除法）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#离散数学lesson2"><span class="nav-number"></span> <span class="nav-text">离散数学lesson2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合内一些元素的定义"><span class="nav-number">1.</span> <span class="nav-text">集合内一些元素的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合运算法则"><span class="nav-number">2.</span> <span class="nav-text">集合运算法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#形式语言内一些元素的定义"><span class="nav-number">3.</span> <span class="nav-text">形式语言内一些元素的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命题逻辑Propositional-Logic"><span class="nav-number">4.</span> <span class="nav-text">命题逻辑Propositional Logic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#真值表："><span class="nav-number">5.</span> <span class="nav-text">真值表：</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
