@@ -28,7 +28,7 @@
 <meta property="og:description" content="lesson1 ER模型">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-02-16T18:07:49.000Z">
-<meta property="article:modified_time" content="2021-02-24T03:49:07.774Z">
+<meta property="article:modified_time" content="2021-03-02T15:21:58.437Z">
 <meta property="article:author" content="Tong">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-02-24 11:49:07" itemprop="dateModified" datetime="2021-02-24T11:49:07+08:00">2021-02-24</time>
+                <time title="修改时间：2021-03-02 23:21:58" itemprop="dateModified" datetime="2021-03-02T23:21:58+08:00">2021-03-02</time>
               </span>
 
           
@@ -419,6 +419,285 @@
 </ul>
 </li>
 </ul>
+<hr>
+<hr>
+<h1 id="Lesson-5"><a href="#Lesson-5" class="headerlink" title="Lesson 5"></a>Lesson 5</h1><ol>
+<li><p>数字都有类型</p>
+<ul>
+<li>Smallint, int, bigint … 2字节, 4字节和8字节的整数 实数, 双精度… … 4字节和8字节浮点数字(精度，比例)</li>
+<li>数字的比例是指小数部分中，小数点右边的小数位数。</li>
+<li>数字的精度是指整数中重要数字的总计数</li>
+</ul>
+</li>
+<li><p>算术运算：</p>
+<ul>
+<li>+, -, *, /</li>
+<li>有些操作适用于关系中的一列数字。<ul>
+<li>AVG(attr) …attr值的平均值</li>
+<li>COUNT(attr) ……attr列中的行数。</li>
+<li>MIN/MAX(attr) ……attr值的最小/最大。</li>
+<li>SUM(attr) ……attr值的总和</li>
+<li>NULL在列操作中可以忽略</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>元组和集合：</p>
+<ul>
+<li><p>元组和集合通常表示为：</p>
+<ul>
+<li><p>(val1, val2, val3, …)</p>
+</li>
+<li><p>例：</p>
+<pre><code>Student(stude#, name, course) 
+( 2177364, ’Jack Smith’, ’BSc’)——元组
+
+SELECT name 
+FROM Employees 
+WHERE job IN (’Lecturer’, ’Tutor’, ’Professor’); ——集合</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>单独关系查询：</p>
+<ul>
+<li><p>从 FROM关系R开始</p>
+</li>
+<li><p>在WHERE句中用condition来应用σ</p>
+</li>
+<li><p>在SELECT句中用attributes来应用π</p>
+</li>
+<li><p>例：</p>
+<pre><code>SELECT Attributes
+FROM R
+WHERE Conditions</code></pre></li>
+</ul>
+</li>
+<li><p>投影(projection)：</p>
+<ul>
+<li><p>假设一个关系R和属性X⊆R</p>
+</li>
+<li><p>例：</p>
+<blockquote>
+<p>Names of drinkers: πName(Drinkers)</p>
+</blockquote>
+<pre><code>语句：
+SELECT Name FROM Drinkers;</code></pre></li>
+<li><p>符号*表示所有属性的列表</p>
+</li>
+<li><p>例：展示drinkers的所有信息</p>
+<pre><code>SELECT * FROM Drinkers</code></pre></li>
+</ul>
+</li>
+<li><p>选择(selection)：</p>
+<ul>
+<li><p>SELECT * FROM Rel WHERE Cond</p>
+</li>
+<li><p>例：找出Regent Hotel对New的price</p>
+<pre><code>SELECT price
+FROM Sells
+WHERE bar = ’Regent Hotel’ AND beer = ’New’;</code></pre></li>
+</ul>
+</li>
+<li><p>重命名(renaming)：</p>
+<ul>
+<li><p>使用重命名操作符ρ，以避免名称冲突。</p>
+</li>
+<li><p>例：</p>
+<blockquote>
+<p>ρBeers(Brand,Brewer) (Beers)</p>
+</blockquote>
+<p>  给出一个新的关系，数据与Beers相同，但属性名发生了变化<br>  SQL提供了AS语句去实现</p>
+<pre><code>语句：
+Beers(name, manf) 
+SELECT name AS Brand, manf AS Brewer FROM Beers;</code></pre></li>
+</ul>
+</li>
+<li><p>AS操作符</p>
+<ul>
+<li><p>除了在重命名中使用外，AS也用于介绍计算值</p>
+</li>
+<li><p>例：</p>
+<pre><code>Sells(bar, beer, price) 
+SELECT bar, beer, price*120 AS PriceInYen 
+FROM Sells;
+（注意此处只显示但不改变数据库 ）</code></pre></li>
+<li><p>在结果中插入文本：</p>
+</li>
+<li><p>例：</p>
+<pre><code>SELECT drinker, ‘likes Cooper’’s’ AS WhoLikes 
+FROM Likes 
+WHERE beer = ‘Sparkling Ale’;
+这将输出：
+DRINKER WHOLIKES 
+--------------- -------------- 
+Gernot     likes Cooper’s 
+Justin     likes Cooper’s</code></pre></li>
+</ul>
+</li>
+<li><p>多重关系查询(Querying Multi-relations)</p>
+<ul>
+<li><p>例：找到约翰喜欢的啤酒商</p>
+<pre><code>Likes(drinker, beer)
+Beers(name, manf)
+语句：
+SELECT Manf
+FROM Likes, Beers
+WHERE drinker = ‘John’ AND beer = name;
+输出结果
+MANF
+--------------------
+Caledonian
+Sierra Nevada
+Sierra Nevada
+Lord Nelson
+（可以通过使用DISTINCT消除重复的内容 ）</code></pre></li>
+</ul>
+</li>
+<li><p>属性名冲突(Attribute Name Clashes)：</p>
+<ul>
+<li><p>属性可能会出现同名造成混淆，以下语句来判断<br>  “哪些酒吧名字和酒名相同”</p>
+<pre><code>SELECT Bars.name 
+FROM Bars, Beers 
+WHERE Bars.name = Beers.name;
+（AS操作符不能用于解决属性名冲突 ）</code></pre></li>
+</ul>
+</li>
+<li><p>表名冲突(Table Name Clashes)：没看懂</p>
+</li>
+<li><p>子查询(Subqueries)：</p>
+<ul>
+<li><p>SELECT-FROM-WHERE查询的结果可以用在另一个查询的WHERE子句中。</p>
+</li>
+<li><p>最简单的情况：子查询返回一个元组。<br>（可以将结果作为一个常量值，并使用=）</p>
+</li>
+<li><p>例：找出与Coogee Bay酒店对VB的收费相同的NEW价格的酒吧</p>
+<pre><code>SELECT bar 
+FROM Sells 
+WHERE beer = ‘New’ 
+    AND price = 
+        (SELECT price 
+        FROM Sells 
+        WHERE bar = ‘Coogee Bay Hotel’ 
+        AND beer = ‘Victoria Bitter’ ); 
+输出结果：
+BAR 
+-------------------- 
+Royal Hotel
+（子查询周围需要加括号）</code></pre></li>
+<li><p>同一查询也可以不使用子查询：</p>
+</li>
+<li><p>例：找出与Coogee Bay酒店对VB的收费相同的NEW价格的酒吧</p>
+<pre><code>SELECT b2.bar 
+FROM Sells b1, Sells b2 
+WHERE b1.beer = ‘Victoria Bitter’ and b1.bar = ‘Coogee Bay Hotel’ and b1.price = b2.price and b2.beer = ‘New’;
+输出    结果：
+BAR 
+-------------------- 
+Royal Hotel</code></pre></li>
+<li><p>复杂情况：子查询返回多个元组/关系时，将其视为一个值的列表，并使用关于列表/集合的各种运算符</p>
+</li>
+<li><p>IN操作符</p>
+<ul>
+<li><p>例：找出John喜欢的酒吧和制造商的名字</p>
+<pre><code>SELECT * 
+FROM Beers 
+WHERE name IN 
+    (SELECT beer 
+    FROM Likes 
+    WHERE drinker = ’John’ );
+输出结果：
+NAME             MANF 
+-------------------------     --------------- 
+80/-                 Caledonian 
+Bigfoot Barley Wine     Sierra Nevada 
+Pale Ale             Sierra Nevada 
+Three Sheets         Lord Nelson
+（该子查询回答了 &quot;约翰喜欢的啤酒名称是什么？”，同时，不使用in也同样可以回答这个查询。子查询的语句可能会效率较低。）</code></pre></li>
+<li><p>不使用子查询的语句：</p>
+<pre><code>SELECT Beers.* 
+FROM Beers, Likes 
+Where Beers.name = Likes.beer and Likes.drinker = ‘John’;</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>EXISTS功能：</p>
+<ul>
+<li><p>如果关系是非空的，则EXISTS为真</p>
+<ul>
+<li><p>例： 查找由制造商生产的唯一的啤酒</p>
+<pre><code>SELECT name 
+FROM Beers b1 
+WHERE NOT EXISTS 
+    (SELECT * 
+    FROM Beers 
+    WHERE manf = b1.manf 
+    AND name != b1.name ); 
+输出结果：
+NAME 
+-------------------- 
+80/- 
+Burragorang Bock 
+Premium Lager</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Quantifiers</p>
+<ul>
+<li><p>ANY 和 ALL 分别作为存在性和普遍性的量词</p>
+</li>
+<li><p>例：找出售价最高的啤酒</p>
+<pre><code>SELECT beer 
+FROM Sells 
+WHERE price &gt;= ALL
+    ( SELECT price 
+    FROM sells ); 
+输出结果：
+BEER 
+-------------------- 
+Three Sheets 
+Old Admiral
+（注意不同点，在常用语中，&quot;任何 &quot;和 &quot;所有 &quot;往往是同义词。）</code></pre></li>
+</ul>
+</li>
+<li><p>并，交，补(Union, Intersection, Difference)：</p>
+<ul>
+<li><p>例：找出饮酒者和啤酒，使饮酒者喜欢啤酒并经常去卖啤酒的酒吧</p>
+<pre><code>(SELECT * 
+FROM Likes 
+) 
+INTERSECT 
+(SELECT drinker,beer 
+FROM Sells, Frequents 
+WHERE Frequents.bar = Sells.bar ); 
+DRINKER         BEER 
+---------------     -------------------- 
+Adam         New 
+John             Three Sheets 
+Justin         Victoria Bitter</code></pre></li>
+</ul>
+</li>
+<li><p>除(Divide)：</p>
+<ul>
+<li><p>找出每个Bar都有卖Justin喜欢的所有beer</p>
+<pre><code>select distinct a.bar 
+from sells a 
+where not exists 
+    ( (select b.beer from likes b 
+    where b.drinker = ’Justin’) 
+    except 
+    (select c.beer from sells c 
+    where c.bar = a.bar ) ); 
+BAR 
+------------------------------ 
+Coogee Bay Hotel</code></pre></li>
+</ul>
+</li>
+</ol>
+<hr>
+<hr>
 
     </div>
 
@@ -499,7 +778,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson1-ER模型"><span class="nav-number">1.</span> <span class="nav-text">lesson1 ER模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库设计原则"><span class="nav-number">1.1.</span> <span class="nav-text">数据库设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ER中实体分为复合实体和弱实体"><span class="nav-number">1.3.</span> <span class="nav-text">ER中实体分为复合实体和弱实体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ER图中关联关系有三种："><span class="nav-number">1.4.</span> <span class="nav-text">ER图中关联关系有三种：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ER图中，实体在关系中的参与分两种，"><span class="nav-number">1.5.</span> <span class="nav-text">ER图中，实体在关系中的参与分两种，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性的分类："><span class="nav-number">1.6.</span> <span class="nav-text">属性的分类：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overlapping与disjoint"><span class="nav-number">1.7.</span> <span class="nav-text">overlapping与disjoint</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson2-关系数据模型"><span class="nav-number">2.</span> <span class="nav-text">lesson2 关系数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系的完整性约束条件"><span class="nav-number">2.2.</span> <span class="nav-text">关系的完整性约束条件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson3"><span class="nav-number">3.</span> <span class="nav-text">Lesson3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ER到关系数据库-RDB-的映射，包含七个步骤"><span class="nav-number">3.1.</span> <span class="nav-text">ER到关系数据库(RDB)的映射，包含七个步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系代数"><span class="nav-number">3.2.</span> <span class="nav-text">关系代数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson4-SQL"><span class="nav-number">4.</span> <span class="nav-text">Lesson4 SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查询句式-Query-syntax-："><span class="nav-number">4.1.</span> <span class="nav-text">查询句式(Query syntax)：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson1-ER模型"><span class="nav-number">1.</span> <span class="nav-text">lesson1 ER模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库设计原则"><span class="nav-number">1.1.</span> <span class="nav-text">数据库设计原则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ER中实体分为复合实体和弱实体"><span class="nav-number">1.3.</span> <span class="nav-text">ER中实体分为复合实体和弱实体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ER图中关联关系有三种："><span class="nav-number">1.4.</span> <span class="nav-text">ER图中关联关系有三种：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ER图中，实体在关系中的参与分两种，"><span class="nav-number">1.5.</span> <span class="nav-text">ER图中，实体在关系中的参与分两种，</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#属性的分类："><span class="nav-number">1.6.</span> <span class="nav-text">属性的分类：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#overlapping与disjoint"><span class="nav-number">1.7.</span> <span class="nav-text">overlapping与disjoint</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson2-关系数据模型"><span class="nav-number">2.</span> <span class="nav-text">lesson2 关系数据模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义-1"><span class="nav-number">2.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系的完整性约束条件"><span class="nav-number">2.2.</span> <span class="nav-text">关系的完整性约束条件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson3"><span class="nav-number">3.</span> <span class="nav-text">Lesson3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ER到关系数据库-RDB-的映射，包含七个步骤"><span class="nav-number">3.1.</span> <span class="nav-text">ER到关系数据库(RDB)的映射，包含七个步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关系代数"><span class="nav-number">3.2.</span> <span class="nav-text">关系代数</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson4-SQL"><span class="nav-number">4.</span> <span class="nav-text">Lesson4 SQL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查询句式-Query-syntax-："><span class="nav-number">4.1.</span> <span class="nav-text">查询句式(Query syntax)：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson-5"><span class="nav-number">5.</span> <span class="nav-text">Lesson 5</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
