@@ -28,7 +28,7 @@
 <meta property="og:description" content="离散数学lesson1">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-02-16T12:20:51.000Z">
-<meta property="article:modified_time" content="2021-03-02T15:14:44.243Z">
+<meta property="article:modified_time" content="2021-03-04T16:42:45.610Z">
 <meta property="article:author" content="Tong">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-02 23:14:44" itemprop="dateModified" datetime="2021-03-02T23:14:44+08:00">2021-03-02</time>
+                <time title="修改时间：2021-03-05 00:42:45" itemprop="dateModified" datetime="2021-03-05T00:42:45+08:00">2021-03-05</time>
               </span>
 
           
@@ -550,6 +550,67 @@ step2: p + rsq’ = (p + r)(p + sq’) = (p + r)(p + s)(p + q’)</code></pre></
 <p>————————————————<br>部分文章引用自：CSDN博主「Correr Z」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。<br>原文链接：<a href="https://blog.csdn.net/weixin_44471681/article/details/102785066" target="_blank" rel="noopener">https://blog.csdn.net/weixin_44471681/article/details/102785066</a></p>
 <hr>
 <hr>
+<p>接lesson4:</p>
+<ol>
+<li>计算机中的布尔算法<ul>
+<li>0和1的n-tuple，进行布尔运算<ol>
+<li>加法(join): (1, 0, 0, 1) + (1, 1, 0, 0) = (1, 1, 0, 1)</li>
+<li>乘法(meet): (1, 0, 0, 1) · (1, 1, 0, 0) = (1, 0, 0, 0)</li>
+<li>取反(complementation): (1, 0, 0, 1)’ = (0, 1, 1, 0)</li>
+</ol>
+</li>
+<li>Pow(S)—S的子集<ol>
+<li>加法(join): A ∪ B</li>
+<li>乘法(meet): A ∩ B</li>
+<li>取反(complementation): A^c = S \ A</li>
+</ol>
+</li>
+<li>对于任何S集合到B的函数，他们的集合表示为Map(S, B)（没懂）<ol>
+<li>如果f, g : S → B，那么<ul>
+<li>(f+g)：S →B的定义是：s → f (s) + g(s)</li>
+<li>(f · g) : S → B 的定义是： s → f (s) · g(s)</li>
+<li>f ’ : S -→ B 的定义是 s → (f (s))’<br>（这里｜S｜= n有2^n个这样的函数）</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>所有n变量的布尔函数<br>  (p1, p2, p3) → (p1 + p2’) · (p1 + p3) · p2 + p3’<br>  这里有2^2^n个，其集合表示为BOOL(n)</li>
+<li>每一个具有有限元素集T的布尔代数都满足<br>  |T| = 2^k for some k.</li>
+<li>布尔代数B1，覆盖在具有不同元素0S , 1S的集合S上。布尔代数B2，覆盖在具有不同元素0T , 1T的集合T上。它们是同构的，如果且仅当有一个一对一对应关系 ι : S → T则：<ol>
+<li>ι(0S ) = 0T </li>
+<li>ι(1S ) = 1T </li>
+<li>ι(s1 + s2) = ι(s1) + ι(s2) for all s1,s2 ∈ S </li>
+<li>ι(s1 · s2) = ι(s1) · ι(s2) for all s1,s2 ∈ S </li>
+<li>ι(s 0 ) = ι(s) 0 for all s ∈ S<br>（简单来说，同构的B1B2间存在一个固定的关系使得上式成立）<h1 id="Lesson5-函数和关系"><a href="#Lesson5-函数和关系" class="headerlink" title="Lesson5 函数和关系"></a>Lesson5 函数和关系</h1><h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>函数：函数可以作为一个集合理论的概念来处理，它是一种两个集合之间特殊的对应关系<ol>
+<li>f : S →T描述集合的配对：存在对应关系使S中每个元素s在T中有且仅有唯一元素t与之对应</li>
+<li>S：定义域(domain)，符号：Dom(f )</li>
+<li>T ：陪域/达域(codomain)，符号：Codom(f)</li>
+<li>{ f (x) : x ∈ Dom(f ) }：f是原象，f(x)是象(image) , 符号：Im(f )<br> Im(f ) ⊆ Codom(f )</li>
+<li>T中所有象(image)元素组成的集合为映射的值域，记作ran f</li>
+</ol>
+</li>
+<li>复合函数(Composition of Functions)：<ul>
+<li>指指逐个把一个函数作用于另一个函数的结果，所得到的第三个函数</li>
+<li>如，函数 f : X → Y 和 g : Y → Z 可以复合，得到从 X 中的 x 映射到 Z 中 g(f(x)) 的函数</li>
+<li>复合函数记为g ∘ f，前者是后者的子集</li>
+<li>后面都听不懂了</li>
+</ul>
+</li>
+<li>函数属性(Properties of Functions)：<ul>
+<li>满射(onto/surjective),：如果陪域的每一个元素都被定义域中的至少一个x所映射，则函数被称为满射。或者说，陪域的每一个值都在定义域中有对应的    </li>
+<li>单射(injective/1-1 Functions)：定义域中每个元素在陪域中都有不同的对应的元素（陪域中可能有不和定义域对应的元素，所以单射不一定满射）</li>
+<li>双射(bijective)：即是单射又是满射，定义域中每个元素都与陪域中不同的元素一一对应</li>
+</ul>
+</li>
+<li>反函数(Inverse Functions)有点没懂，只知道大概是从S→T到T→S</li>
+</ol>
+<hr>
+<hr>
 
     </div>
 
@@ -630,7 +691,7 @@ step2: p + rsq’ = (p + r)(p + sq’) = (p + r)(p + s)(p + q’)</code></pre></
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#离散数学lesson1"><span class="nav-number">1.</span> <span class="nav-text">离散数学lesson1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合"><span class="nav-number">1.1.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取整："><span class="nav-number">1.2.</span> <span class="nav-text">取整：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#除法："><span class="nav-number">1.3.</span> <span class="nav-text">除法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.4.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#欧几里得算法（辗转相除法）"><span class="nav-number">1.5.</span> <span class="nav-text">欧几里得算法（辗转相除法）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#离散数学lesson2"><span class="nav-number">2.</span> <span class="nav-text">离散数学lesson2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合内一些元素的定义"><span class="nav-number">2.1.</span> <span class="nav-text">集合内一些元素的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合运算法则"><span class="nav-number">2.2.</span> <span class="nav-text">集合运算法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#形式语言内一些元素的定义"><span class="nav-number">2.3.</span> <span class="nav-text">形式语言内一些元素的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命题逻辑Propositional-Logic"><span class="nav-number">2.4.</span> <span class="nav-text">命题逻辑Propositional Logic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命题逻辑的公式集：Σ-Prop-∪-⊤-⊥-¬-∧-∨-⇒-⇔"><span class="nav-number">2.5.</span> <span class="nav-text">命题逻辑的公式集：Σ &#x3D; Prop ∪ {⊤, ⊥, ¬, ∧, ∨, ⇒, ⇔, (, )}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#真值表："><span class="nav-number">2.6.</span> <span class="nav-text">真值表：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#离散数学Lesson3"><span class="nav-number">3.</span> <span class="nav-text">离散数学Lesson3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#离散数学Lesson4"><span class="nav-number">4.</span> <span class="nav-text">离散数学Lesson4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#以上为课外扩展知识，以下为课程记录："><span class="nav-number">4.1.</span> <span class="nav-text">以上为课外扩展知识，以下为课程记录：</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#离散数学lesson1"><span class="nav-number">1.</span> <span class="nav-text">离散数学lesson1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合"><span class="nav-number">1.1.</span> <span class="nav-text">集合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取整："><span class="nav-number">1.2.</span> <span class="nav-text">取整：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#除法："><span class="nav-number">1.3.</span> <span class="nav-text">除法：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">1.4.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#欧几里得算法（辗转相除法）"><span class="nav-number">1.5.</span> <span class="nav-text">欧几里得算法（辗转相除法）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#离散数学lesson2"><span class="nav-number">2.</span> <span class="nav-text">离散数学lesson2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#集合内一些元素的定义"><span class="nav-number">2.1.</span> <span class="nav-text">集合内一些元素的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#集合运算法则"><span class="nav-number">2.2.</span> <span class="nav-text">集合运算法则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#形式语言内一些元素的定义"><span class="nav-number">2.3.</span> <span class="nav-text">形式语言内一些元素的定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命题逻辑Propositional-Logic"><span class="nav-number">2.4.</span> <span class="nav-text">命题逻辑Propositional Logic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命题逻辑的公式集：Σ-Prop-∪-⊤-⊥-¬-∧-∨-⇒-⇔"><span class="nav-number">2.5.</span> <span class="nav-text">命题逻辑的公式集：Σ &#x3D; Prop ∪ {⊤, ⊥, ¬, ∧, ∨, ⇒, ⇔, (, )}</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#真值表："><span class="nav-number">2.6.</span> <span class="nav-text">真值表：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#离散数学Lesson3"><span class="nav-number">3.</span> <span class="nav-text">离散数学Lesson3</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#离散数学Lesson4"><span class="nav-number">4.</span> <span class="nav-text">离散数学Lesson4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#以上为课外扩展知识，以下为课程记录："><span class="nav-number">4.1.</span> <span class="nav-text">以上为课外扩展知识，以下为课程记录：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson5-函数和关系"><span class="nav-number">5.</span> <span class="nav-text">Lesson5 函数和关系</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数"><span class="nav-number">5.0.1.</span> <span class="nav-text">函数</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

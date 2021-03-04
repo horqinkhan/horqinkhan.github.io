@@ -28,7 +28,7 @@
 <meta property="og:description" content="lesson1 课程介绍">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-02-17T08:34:34.000Z">
-<meta property="article:modified_time" content="2021-03-02T15:48:02.983Z">
+<meta property="article:modified_time" content="2021-03-04T16:39:48.105Z">
 <meta property="article:author" content="Tong">
 <meta name="twitter:card" content="summary">
 
@@ -180,7 +180,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-02 23:48:02" itemprop="dateModified" datetime="2021-03-02T23:48:02+08:00">2021-03-02</time>
+                <time title="修改时间：2021-03-05 00:39:48" itemprop="dateModified" datetime="2021-03-05T00:39:48+08:00">2021-03-05</time>
               </span>
 
           
@@ -471,6 +471,271 @@ display_fraction(*simplify(*convert_str_to_int(&apos;234&apos;,&apos;3456’)))#
 </ol>
 <hr>
 <hr>
+<h1 id="Lesson5"><a href="#Lesson5" class="headerlink" title="Lesson5"></a>Lesson5</h1><ol>
+<li><p>依旧是元组赋值的</p>
+<p> 例1：</p>
+<pre><code>def f(a, b, c=10):
+       return (a + b, c * 20)
+x = (1, 3, 5)
+
+#f(x)报错，因为b没有赋值
+f(*x)
+
+输出结果
+(4, 100)</code></pre><p> 例2:    </p>
+<pre><code>def g(y,z):
+    print(f&apos;{y} --- {z}&apos;)
+
+#g(f(*x))报错，同理因为z没有赋值
+g(*f(*x))
+
+输出结果：
+4 --- 100</code></pre></li>
+<li><p>函数定义范围：</p>
+<ol>
+<li><p>一个解释函数定义范围的例子</p>
+<pre><code>def f():
+    def g():#定义函数g()也可以写在f()函数的外面
+        print(&apos;i am g!&apos;)
+    print(&apos;i am f, waking up!&apos;)
+    g()
+    print(&apos;i am f, going to sleep&apos;)
+f()
+
+输出结果：
+i am f, waking up!
+i am g!
+i am f, going to sleep</code></pre></li>
+<li><p>不用在意函数定义的前后顺序</p>
+<pre><code>def f_1():
+    g_1()
+
+def g_1():
+    print(&apos;HI!&apos;)
+f_1()
+
+输出结果：
+HI!</code></pre></li>
+</ol>
+</li>
+<li><p>同时在对方函数定义里定义的函数：</p>
+<pre><code>def f(n):
+    print(&apos;f working with argument of&apos;, n)
+        if n &gt; 0:
+            g(n - 1)
+
+def g(n):
+        print(&apos;g working with argument of&apos;, n)
+        if n &gt; 0:
+            f(n - 1)
+
+f(10)
+
+输出结果：
+f working with argument of 10
+g working with argument of 9
+f working with argument of 8
+g working with argument of 7
+f working with argument of 6
+g working with argument of 5
+f working with argument of 4
+g working with argument of 3
+f working with argument of 2
+g working with argument of 1
+f working with argument of 0</code></pre></li>
+<li><p>Unicode字符集</p>
+<ol>
+<li><p>圣诞树的Unicode：U + 1F384，unicode是以十六进制进行编码的</p>
+</li>
+<li><p>三种1F384的16进制转化</p>
+<pre><code>4 + (8 * 16) + (3 * 16 **2) + (15 * 16 ** 3) + (1 * 16 ** 4) 
+0X1F384
+int(&apos;1F384&apos;,16)#将str转化为int时，可注明该字符串进制并转化为10进制整数
+
+三种均输出：
+127876</code></pre></li>
+<li><p>四种输出圣诞树的方法</p>
+<pre><code>#chr()函数是输入一个整数, 返回其对应的ascii符号
+chr(127876)
+chr(0X1F384)
+&apos;\U0001F384&apos;
+&apos;\N{Christmas tree}&apos;
+
+四种均输出：
+&apos;&apos;</code></pre></li>
+<li><p>ord()</p>
+<pre><code>#ord()函数就是用来返回单个字符的ascii值
+ord(&apos;&apos;)
+
+输出结果：
+127876</code></pre></li>
+</ol>
+</li>
+<li><p>二进制</p>
+<ol>
+<li><p>bin()返回一个整数 int 或者长整数 long int 的二进制表示</p>
+<pre><code>bin(41)#返回0b101001</code></pre></li>
+<li><p>输入0b开头二进制数直接输出对应10进制整数</p>
+<pre><code>0b101001        </code></pre></li>
+<li><p>:b返回对应二进制</p>
+<pre><code>f&apos;{41:b}&apos;#返回101001
+len(f&apos;{41:b}&apos;)#返回二进制数列长度</code></pre></li>
+</ol>
+</li>
+<li><p>二进制数列遍历</p>
+<ol>
+<li><p>遍历结果为integer</p>
+<pre><code>for i in range(8):
+    print(f&apos;{i:03b}&apos;)#03限定了输出结果的长度
+
+输出结果：
+000
+001
+010
+011
+100
+101
+110
+111</code></pre></li>
+<li><p>遍历结果为tuple</p>
+<pre><code>for i in range(8):
+        print(tuple(int(b) for b in f&apos;{i:03b}&apos;))
+
+输出结果：
+(0, 0, 0)
+(0, 0, 1)
+(0, 1, 0)
+(0, 1, 1)
+(1, 0, 0)
+(1, 0, 1)
+ (1, 1, 0)
+(1, 1, 1)</code></pre></li>
+<li><p>根据各位通过整除取余进行遍历输出</p>
+<ol>
+<li><p>整除和取余操作</p>
+<pre><code>#%取余
+2315 % 10 #输出5
+#//整除
+2315 // 1000 #输出2
+#/除法
+2315 / 1000 #输出2.315</code></pre></li>
+<li><p>以7991至8007间整数示例</p>
+<pre><code>for i in range(7991, 8007):
+        print(i // 1000, i // 100 % 10, i // 10 % 10, i % 10)
+
+输出结果：
+7 9 9 1
+7 9 9 2
+7 9 9 3
+7 9 9 4
+7 9 9 5
+7 9 9 6
+7 9    9 7
+7 9 9 8
+7 9 9 9
+8 0 0 0
+8 0 0 1
+8 0 0 2
+8 0 0 3
+8 0 0 4
+8 0 0 5
+8 0 0 6</code></pre></li>
+<li><p>二进制</p>
+<pre><code>for i in range(8):
+        print(tuple((i // 4, i // 2 % 2, i % 2)))
+
+输出结果：
+(0, 0, 0)
+(0, 0, 1)
+(0, 1, 0)
+(0, 1, 1)
+(1, 0, 0)
+(1, 0, 1)
+(1, 1, 0)
+(1, 1, 1)</code></pre></li>
+<li><p>最后完成一个我看不懂的dict遍历输出</p>
+<pre><code>rule_number = 41
+bits_of_rule = [int(b) for b in f&apos;{rule_number:08b}&apos;]
+bits_of_rule
+
+#把dict带进循环
+D = {(i // 4, i // 2 % 2, i % 2): bits_of_rule[-i - 1] for i in range(8)}
+D
+
+输出结果：
+{(0, 0, 0): 1,
+(0, 0, 1): 0,
+(0, 1, 0): 0,
+(0, 1, 1): 1,
+(1, 0, 0): 0,
+(1, 0, 1): 1,
+(1, 1, 0): 0,
+(1, 1, 1): 0}</code></pre></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>sorted()</p>
+<ol>
+<li><p>sorted()函数：从可迭代的项中返回一个新的排序列表,简而言之就是排序</p>
+<pre><code>sorted({0,3,19,3452,81})
+
+输出结果：
+[0, 3, 19, 81, 3452]</code></pre></li>
+<li><p>加一个dict的小例子</p>
+<pre><code>D = {1: 10, 0: 20, 3: 30}
+sorted(D)
+
+输出结果：
+[0, 1, 3]
+#key的排序</code></pre></li>
+<li><p>使用key来限定排序规则</p>
+<pre><code>sorted({&apos;Integer&apos;, &apos;literals&apos;, &apos;in&apos;, &apos;Different&apos;, &apos;bases&apos;})
+
+输出结果：
+[&apos;Different&apos;, &apos;Integer&apos;, &apos;bases&apos;, &apos;in&apos;, &apos;literals&apos;]
+#这里可以看到大写字母都排在前面
+#如果列表中的元素是字符串，那么key = str.lower可以使比较都按小写字母的ASCII码进行比较
+
+sorted({&apos;Integer&apos;, &apos;literals&apos;, &apos;in&apos;, &apos;Different&apos;, &apos;bases&apos;},
+          key = str.lower #.lower()函数效果一样
+          )
+
+输出结果：
+[&apos;bases&apos;, &apos;Different&apos;, &apos;in&apos;, &apos;Integer&apos;, &apos;literals&apos;]</code></pre></li>
+<li><p>如果希望既按字符串长度进行排序，又按ASCII码排序，可以定义一个函数</p>
+<pre><code>def combine_orders(s):
+        return len(s), s
+sorted({&apos;Integer&apos;, &apos;literals&apos;, &apos;in&apos;, &apos;Different&apos;, &apos;bases&apos;},
+              key = combine_orders
+              )
+
+输出结果：
+&apos;in&apos;, &apos;bases&apos;, &apos;Integer&apos;, &apos;literals&apos;, &apos;Different&apos;]</code></pre></li>
+</ol>
+</li>
+<li><p>lambda函数</p>
+<ol>
+<li><p>lambda,匿名函数 1.减少代码冗余 2.不用命名函数</p>
+<pre><code>E = lambda: 2
+E()
+或
+(lambda:2)()#代码简洁且无需命名</code></pre></li>
+<li><p>例子：</p>
+<pre><code>(lambda x, y: x + y)(2, 3)
+
+输出结果：
+5</code></pre></li>
+<li><p>所以刚刚的排序7.4就可以用lambda函数来解决</p>
+<pre><code>sorted({&apos;Integer&apos;, &apos;literals&apos;, &apos;in&apos;, &apos;Different&apos;, &apos;bases&apos;},
+          key = lambda s:(len(s), s.lower())
+          )
+
+输出结果：
+[&apos;in&apos;, &apos;bases&apos;, &apos;Integer&apos;, &apos;literals&apos;, &apos;Different&apos;]</code></pre></li>
+</ol>
+</li>
+</ol>
 
     </div>
 
@@ -548,7 +813,7 @@ display_fraction(*simplify(*convert_str_to_int(&apos;234&apos;,&apos;3456’)))#
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson1-课程介绍"><span class="nav-number">1.</span> <span class="nav-text">lesson1 课程介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一节课主要介绍了jupyter的操作方法和一些简单的python方法"><span class="nav-number">1.1.</span> <span class="nav-text">第一节课主要介绍了jupyter的操作方法和一些简单的python方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson2-第二节课讲了数据类型和一些相关函数，以及简单涉及了循环"><span class="nav-number">2.</span> <span class="nav-text">Lesson2 第二节课讲了数据类型和一些相关函数，以及简单涉及了循环</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson3-循环，随机数，捕获异常"><span class="nav-number">3.</span> <span class="nav-text">Lesson3 循环，随机数，捕获异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson4"><span class="nav-number">4.</span> <span class="nav-text">Lesson4</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lesson1-课程介绍"><span class="nav-number">1.</span> <span class="nav-text">lesson1 课程介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一节课主要介绍了jupyter的操作方法和一些简单的python方法"><span class="nav-number">1.1.</span> <span class="nav-text">第一节课主要介绍了jupyter的操作方法和一些简单的python方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson2-第二节课讲了数据类型和一些相关函数，以及简单涉及了循环"><span class="nav-number">2.</span> <span class="nav-text">Lesson2 第二节课讲了数据类型和一些相关函数，以及简单涉及了循环</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson3-循环，随机数，捕获异常"><span class="nav-number">3.</span> <span class="nav-text">Lesson3 循环，随机数，捕获异常</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson4"><span class="nav-number">4.</span> <span class="nav-text">Lesson4</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lesson5"><span class="nav-number">5.</span> <span class="nav-text">Lesson5</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
